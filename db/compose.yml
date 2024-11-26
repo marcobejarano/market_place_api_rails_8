@@ -1,0 +1,19 @@
+networks:
+  postgres_net:
+    driver: bridge
+    name: postgres_net
+
+services:
+  postgres:
+    image: postgres:17.2-alpine3.20
+    container_name: postgres
+    networks:
+      - postgres_net
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: market_place_api_user
+      POSTGRES_PASSWORD: Postgres123
