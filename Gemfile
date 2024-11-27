@@ -13,7 +13,7 @@ gem "puma", ">= 5.0"
 gem "bcrypt"
 
 # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
-gem 'jwt', '~> 2.9', '>= 2.9.3'
+gem "jwt", "~> 2.9", ">= 2.9.3"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
