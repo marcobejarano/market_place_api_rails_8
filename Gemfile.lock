@@ -110,6 +110,8 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.8.2)
+    jwt (2.9.3)
+      base64
     kamal (2.3.0)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -227,7 +229,7 @@ GEM
       rubocop-ast (>= 1.36.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.36.1)
+    rubocop-ast (1.36.2)
       parser (>= 3.3.1.0)
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
@@ -302,6 +304,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+  jwt (~> 2.9, >= 2.9.3)
   kamal
   pg (~> 1.1)
   puma (>= 5.0)
