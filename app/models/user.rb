@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates :email, uniqueness: true
-  validates_format_of :email, with: /@/
+  validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "Must be a valid email address" }
   validates :password_digest, presence: true
   has_secure_password
 end
