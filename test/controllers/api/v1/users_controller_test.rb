@@ -42,7 +42,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch api_v1_user_url(@user),
+    put api_v1_user_url(@user),
       params: {
         user: {
           email: @user.email
@@ -56,7 +56,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should forbid update user" do
-    patch api_v1_user_url(@user),
+    put api_v1_user_url(@user),
       params: {
         user: {
           email: @user.email
@@ -67,7 +67,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not update user when invalid params are sent" do
-    patch api_v1_user_url(@user),
+    put api_v1_user_url(@user),
       params: {
         user: {
           email: "bad_email"
