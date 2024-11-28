@@ -4,22 +4,22 @@ class Api::V1::ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @product = products(:one)
   end
-  
+
   test "should list all products" do
     get api_v1_products_url(), as: :json
     assert_response :success
   end
-  
+
   test "should show product" do
     get api_v1_product_url(@product), as: :json
     assert_response :success
-    
+
     json_response = JSON.parse(response.body)
-    assert_equal @product.title, json_response['title']
+    assert_equal @product.title, json_response["title"]
   end
-  
+
   test "should create product" do
-    assert_difference('Product.count') do
+    assert_difference("Product.count") do
       post api_v1_products_url(@product),
         params: {
           product: {
@@ -35,9 +35,9 @@ class Api::V1::ProductsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :success
   end
-  
+
   test "should forbid create product" do
-    assert_no_difference('Product.count') do
+    assert_no_difference("Product.count") do
       post api_v1_products_url(@product),
         params: {
           product: {
@@ -50,7 +50,7 @@ class Api::V1::ProductsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :forbidden
   end
-  
+
   test "should update product" do
     put api_v1_product_url(@product),
       params: {
@@ -64,7 +64,7 @@ class Api::V1::ProductsControllerTest < ActionDispatch::IntegrationTest
       as: :json
     assert_response :success
   end
-  
+
   test "should forbid update product" do
     put api_v1_product_url(@product),
       params: {
@@ -78,7 +78,7 @@ class Api::V1::ProductsControllerTest < ActionDispatch::IntegrationTest
       as: :json
     assert_response :forbidden
   end
-  
+
   test "should destroy product" do
     assert_difference("Product.count", -1) do
       delete api_v1_product_url(@product),
@@ -89,7 +89,7 @@ class Api::V1::ProductsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :no_content
   end
-  
+
   test "should forbid destroy product" do
     assert_no_difference("Product.count") do
       delete api_v1_product_url(@product),

@@ -15,6 +15,9 @@ gem "bcrypt"
 # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
 gem "jwt", "~> 2.9", ">= 2.9.3"
 
+# Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
+gem "faker", "~> 3.5", ">= 3.5.1"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
