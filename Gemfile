@@ -18,6 +18,9 @@ gem "jwt", "~> 2.9", ">= 2.9.3"
 # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 gem "faker", "~> 3.5", ">= 3.5.1"
 
+# Fast, simple and easy to use JSON:API serialization library (also known as fast_jsonapi).
+gem 'jsonapi-serializer', '~> 2.2'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
