@@ -25,6 +25,7 @@ class Api::V1::OrdersController < ApplicationController
     
     if order.save
       render json: order, status: :created
+      OrderMailer.send_confirmation(order).deliver
     else
       render json: { errors: order.errors },
         status: :unprocessable_entity

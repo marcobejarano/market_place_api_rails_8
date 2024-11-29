@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   before_validation :set_total!
-  after_commit :set_total!, on: [:create, :update]
+  after_commit :set_total!, on: [ :create, :update ]
   
   validates :total,
     numericality: {
