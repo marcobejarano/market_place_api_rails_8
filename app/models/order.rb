@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  include ActiveModel::Validations
   before_validation :set_total!
   after_commit :set_total!, on: [ :create, :update ]
 
@@ -7,6 +8,7 @@ class Order < ApplicationRecord
       greater_than_or_equal_to: 0
     },
     presence: true
+  validates_with EnoughProductsValidator
 
   belongs_to :user
   has_many :placements, dependent: :destroy
