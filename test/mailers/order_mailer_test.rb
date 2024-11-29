@@ -4,7 +4,7 @@ class OrderMailerTest < ActionMailer::TestCase
   setup do
     @order = orders(:one)
   end
-  
+
   test "should be set to be delivered to the user from the order passed in" do
     mail = OrderMailer.send_confirmation(@order)
     assert_equal "Order Confirmation", mail.subject
