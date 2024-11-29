@@ -3,7 +3,9 @@
 one:
   order: one
   product: one
+  quantity: 10
 
 two:
   order: two
   product: two
+  quantity: 10
