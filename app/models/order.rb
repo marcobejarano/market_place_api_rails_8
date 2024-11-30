@@ -15,11 +15,11 @@ class Order < ApplicationRecord
   has_many :products, through: :placements
 
   def set_total!
-    self.total = self.placements.map{
+    self.total = self.placements.map {
       |placement| placement.product.price * placement.quantity
     }.sum
   end
-  
+
   # @param product_ids_and_quantities [Array<Hash>] something like this `[{product_id: 1, quantity: 2}]`
   # @yield [Placement] placements build
   def build_placements_with_product_ids_and_quantities(product_ids_and_quantities)
